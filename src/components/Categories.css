@@ -1,10 +1,10 @@
-.categories{
+.category {
     width: 300px;
     cursor: pointer;
-     transition: 0.3s ease;
+    transition: 150ms ease;
 }
-.categories:hover{
-    transition: 0.3s;
-    background-color: #df8d8d;
-    color: beige;
+
+.category:hover {
+    background-color: rgb(115, 115, 167);
+    color: white;
 }

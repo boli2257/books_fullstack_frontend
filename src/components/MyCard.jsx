@@ -1,16 +1,16 @@
 import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
 
-export const MyCard = ({title,author,cover,description,rating,name}) =>{
-    
+export const MyCard = ({title, author, cover, description, rating, categ, category}) => {
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder style={{width:"300px"}}>
       <Card.Section>
         <Image
+          w="100%"
           src={cover}
-          w='100%'
           mah={220}
-          alt={title}
           fit='cover'
+        //   style={{aspectRatio:"1/1"}}
+          fallbackSrc="https://placehold.co/600x400?text=Placeholder"
         />
       </Card.Section>
 
@@ -23,9 +23,15 @@ export const MyCard = ({title,author,cover,description,rating,name}) =>{
         {description}
       </Text>
 
-      <Button color="blue" fullWidth mt="md" radius="md">
-        Book classic tour now
-      </Button>
+      <Text size="sm" c="dimmed">
+        Szerző: {author}
+      </Text>
+      
+      {categ ? <Text size="sm" c="dimmed">
+        Kategória: {category}
+      </Text> : null}
+
+      
     </Card>
   );
 }

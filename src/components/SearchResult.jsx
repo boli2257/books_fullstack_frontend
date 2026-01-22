@@ -2,7 +2,7 @@ import { IconX } from '@tabler/icons-react'
 import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { getBooksByTitle } from '../utils'
+import { getBooksByCateg, getBooksByTitle } from '../utils'
 import { Box, Flex, Loader, Notification, Paper, Title } from '@mantine/core'
 import { MyCard } from './MyCard'
 
@@ -18,7 +18,7 @@ const SearchResult = () => {
         {data && <Title>A keresett könyvcím / könyvcím részlet: {txt}</Title>}
         {data && data.data.length > 0 ? data.data.map(obj=>
             <Box key={obj.id}>
-                <MyCard {...obj}/>
+                <MyCard {...obj} categ={true}/>
             </Box>
         )
         :
